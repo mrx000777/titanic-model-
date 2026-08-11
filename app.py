@@ -13,82 +13,148 @@ model = joblib.load("titanic_model.pkl")
 st.markdown(
     """
     <style>
-    .stApp {
-        background-color: #f8fafc;
+    [data-testid="stAppViewContainer"] {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+    }
+
+    [data-testid="stHeader"] {
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    [data-testid="stSidebar"] {
+        background-color: #111827;
+    }
+
+    .block-container {
+        padding-top: 2rem;
+        padding-bottom: 3rem;
+        max-width: 1200px;
     }
 
     .hero {
-        padding: 35px;
-        border-radius: 18px;
+        padding: 40px;
+        border-radius: 24px;
         text-align: center;
         margin-bottom: 30px;
-        background-color: #0f172a;
-        color: white;
+        background: linear-gradient(135deg, #172554, #1e40af);
+        border: 1px solid #3b82f6;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
     }
 
     .hero h1 {
-        font-size: 42px;
-        margin-bottom: 8px;
+        color: white;
+        font-size: 44px;
+        margin-bottom: 10px;
+        font-weight: 800;
     }
 
     .hero p {
+        color: #bfdbfe;
         font-size: 18px;
         margin: 0;
-        opacity: 0.8;
+    }
+
+    .section-title {
+        color: white;
+        font-size: 27px;
+        font-weight: 700;
+        margin-top: 15px;
+        margin-bottom: 5px;
+    }
+
+    .stCaption {
+        color: #cbd5e1 !important;
+    }
+
+    label {
+        color: #e2e8f0 !important;
+        font-weight: 600 !important;
+    }
+
+    .stSelectbox > div > div,
+    .stNumberInput > div > div {
+        background-color: #1e293b;
+        color: white;
+        border: 1px solid #475569;
+        border-radius: 10px;
+    }
+
+    .stSelectbox input,
+    .stNumberInput input {
+        color: white !important;
+    }
+
+    .stButton > button {
+        background: linear-gradient(135deg, #2563eb, #3b82f6);
+        color: white;
+        border: none;
+        border-radius: 12px;
+        padding: 14px;
+        font-size: 18px;
+        font-weight: 700;
+        box-shadow: 0 8px 25px rgba(37, 99, 235, 0.35);
+        transition: 0.2s;
+    }
+
+    .stButton > button:hover {
+        background: linear-gradient(135deg, #1d4ed8, #2563eb);
+        transform: translateY(-2px);
     }
 
     .survived-card {
-        padding: 30px;
-        border-radius: 18px;
+        padding: 35px;
+        border-radius: 20px;
         text-align: center;
-        background-color: #dcfce7;
-        border: 1px solid #86efac;
+        background: linear-gradient(135deg, #064e3b, #065f46);
+        border: 1px solid #10b981;
         margin-top: 25px;
+        box-shadow: 0 10px 30px rgba(16, 185, 129, 0.2);
     }
 
     .not-survived-card {
-        padding: 30px;
-        border-radius: 18px;
+        padding: 35px;
+        border-radius: 20px;
         text-align: center;
-        background-color: #fee2e2;
-        border: 1px solid #fca5a5;
+        background: linear-gradient(135deg, #7f1d1d, #991b1b);
+        border: 1px solid #ef4444;
         margin-top: 25px;
+        box-shadow: 0 10px 30px rgba(239, 68, 68, 0.2);
     }
 
     .result-title {
+        color: white;
         font-size: 30px;
-        font-weight: bold;
+        font-weight: 800;
         margin-bottom: 10px;
     }
 
     .probability {
+        color: #f8fafc;
         font-size: 22px;
-        font-weight: bold;
+        font-weight: 700;
     }
 
-    .section-title {
-        font-size: 25px;
-        font-weight: bold;
-        margin-top: 10px;
-        margin-bottom: 5px;
+    [data-testid="stMetric"] {
+        background-color: #1e293b;
+        border: 1px solid #475569;
+        padding: 15px;
+        border-radius: 12px;
     }
+
+    [data-testid="stMetricLabel"] {
+        color: #94a3b8 !important;
+    }
+
+    [data-testid="stMetricValue"] {
+        color: white !important;
+    }
+
+    hr {
+        border-color: #475569;
+    }
+
     </style>
     """,
-    unsafe_allow_html=True
-)
-
-st.markdown(
-    """
-    <div class="hero">
-        <h1>🚢 Titanic Survival Predictor</h1>
-        <p>Machine Learning powered passenger survival prediction</p>
-    </div>
-    """,
-    unsafe_allow_html=True
-)
-
-st.markdown(
-    '<div class="section-title">👤 Passenger Information</div>',
     unsafe_allow_html=True
 )
 
@@ -259,6 +325,5 @@ if predict_button:
 st.divider()
 
 st.caption(
-    "Titanic Survival Prediction | Logistic Regression | "
-    "Python • Pandas • Scikit-learn • Streamlit"
+    "Titanic Survival Prediction By Manish Thakur"
 )
