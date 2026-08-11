@@ -1,0 +1,2 @@
+A Machine Learning web application that predicts whether a passenger would survive the Titanic disaster based on passenger information such as passenger class, gender, age, family members, fare, cabin availability, and port of embarkation.
+The project uses Python, Pandas, Scikit-learn, Logistic Regression, Joblib, and Streamlit
